@@ -561,6 +561,12 @@ video {
   width: 100%;
 }
 
+@media (min-width: 414px) {
+  .container {
+    max-width: 414px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -624,16 +630,30 @@ video {
   flex-shrink: 1;
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.scale-50 {
+  --tw-scale-x: .5;
+  --tw-scale-y: .5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-75 {
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-100 {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.content-center {
-  align-content: center;
 }
 
 .items-center {
@@ -694,17 +714,8 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #de5499, var(--tw-gradient-to);
 }
 
-.via-green {
-  --tw-gradient-to: rgb(93 188 112 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), #5dbc70, var(--tw-gradient-to);
-}
-
 .to-yellow {
   --tw-gradient-to: #DEBD69;
-}
-
-.to-pink {
-  --tw-gradient-to: #de5499;
 }
 
 .p-6 {
@@ -721,6 +732,11 @@ video {
   padding-right: 2.5rem;
 }
 
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .pt-20 {
   padding-top: 5rem;
 }
@@ -733,8 +749,32 @@ video {
   padding-bottom: 3rem;
 }
 
+.pl-32 {
+  padding-left: 8rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+
 .pl-8 {
   padding-left: 2rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.pl-12 {
+  padding-left: 3rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-folklore {
@@ -746,19 +786,14 @@ video {
   line-height: 2.25rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .italic {
@@ -775,14 +810,14 @@ video {
   color: rgb(222 189 105 / var(--tw-text-opacity));
 }
 
+.text-pink {
+  --tw-text-opacity: 1;
+  color: rgb(222 84 153 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(93 188 112 / var(--tw-text-opacity));
 }
 
 .drop-shadow-lg {
@@ -794,24 +829,66 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 414px) {
+  .xs\:pl-10 {
+    padding-left: 2.5rem;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:justify-center {
     justify-content: center;
   }
 
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  .sm\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .sm\:pl-32 {
+    padding-left: 8rem;
   }
 }
 
 @media (min-width: 768px) {
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
   .md\:justify-start {
     justify-content: flex-start;
   }
 
-  .md\:text-6xl {
-    font-size: 3.75rem;
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .md\:pl-8 {
+    padding-left: 2rem;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
+
+  .md\:text-right {
+    text-align: right;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
     line-height: 1;
   }
 
@@ -819,10 +896,9 @@ html {
     font-size: 8rem;
     line-height: 1;
   }
-}
 
-@media (min-width: 1024px) {
-  .lg\:justify-between {
-    justify-content: space-between;
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
