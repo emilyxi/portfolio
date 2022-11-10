@@ -25,14 +25,17 @@ module.exports = {
     extend: {
       
       colors: {
-        'body': '#294283',
+        'body': '#50372C',
         'green-selected-text': '#A3C8AB',
         'pink-selected-text': '#B26B9F',
         'regular-text': '#FFFFFF',
+        'beige': '#F6E1B5',
         'yellow': '#DEBD69',
         'green': '#5dbc70',
         'blue': '#A9E0FF',
-        'pink': '#de5499'
+        'pink': '#de5499',
+        'dark-blue': '#3D63BF',
+        'dark-pink': '#EC88B0',
 
       }, 
     
@@ -50,10 +53,14 @@ module.exports = {
           '60%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+        fliphoriz: {
+          '50%': {transform: 'rotateY(180deg)'}
+        }
       },
 
       animation: {
-        'waving-hand': 'wave 2s linear infinite',
+        hflip: 'fliphoriz 2s infinite',
+        wavinghand: 'wave 2s linear infinite',
       },
 
 
